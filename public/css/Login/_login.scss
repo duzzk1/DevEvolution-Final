@@ -1,0 +1,29 @@
+.formLogin{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 80vh;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.formLogin label{
+    text-align: center;
+}
+
+.formLogin input{
+    padding: 5px 10px;
+}
+
+.borderForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    border-radius: 20px;
+    width: 30%;
+    height: 70%;
+    gap: 10px;
+}

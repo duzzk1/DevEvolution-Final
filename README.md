@@ -7,7 +7,7 @@
 
 ## Docker
 
-Crie um arquivo `.env` com o conteúdo de `.env-sample`.
+Crie um arquivo `.env` com o conteï¿½do de `.env-sample`.
 
 ### Buildar os Containers:
 
@@ -25,7 +25,7 @@ Crie um arquivo `.env` com o conteúdo de `.env-sample`.
 
 `docker exec -it mariadb bash`
 
-### Acessar aplicação:
+### Acessar aplicaï¿½ï¿½o:
 
 `localhost:8888`
 
