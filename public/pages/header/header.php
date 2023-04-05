@@ -17,7 +17,7 @@ date_default_timezone_set('America/Sao_Paulo');
 <body>
     <header>
         <nav>
-            <a href="../index/index.php"><img src="logo.svg" alt="Logo do Projeto"></a>
+            <a class="logoDu" href="../index/index.php"><img src="../../assets/img/logo.svg" alt="Logo do Projeto"></a>
             <ul>
                 <li class="listitem"><a href="../index/index.php">Inicio</a></li>
                 <li class="listitem"><a href="../index/index.php#sobre">Sobre</a></li>

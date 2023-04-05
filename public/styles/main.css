@@ -9,6 +9,7 @@
   text-decoration: none;
   font-family: "Poppins", sans-serif;
   color: black;
+  scroll-behavior: smooth;
 }
 
 header {
@@ -31,6 +32,19 @@ nav {
   width: 80px;
 }
 
+nav a img {
+  width: 60px;
+  animation: rodaLogo 5s infinite ease-in-out alternate;
+}
+
+@keyframes rodaLogo {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 ul {
   display: flex;
   gap: 20px;
@@ -149,4 +163,19 @@ table {
 table td,
 table th {
   border: 1px solid black;
+}
+
+#inicio {
+  width: 100%;
+  height: calc(100vh - 80px);
+}
+
+#sobre {
+  width: 100%;
+  height: calc(100vh - 80px);
+}
+
+#contato {
+  width: 100%;
+  height: calc(100vh - 80px);
 }/*# sourceMappingURL=main.css.map */

@@ -1,7 +1,9 @@
 <?php
 require_once('../header/header.php');
 ?>
-<h1>teste</h1>
 
+<div id="inicio"></div>
+<div id="sobre"></div>
+<div id="contato"></div>
 <?php
 require_once('../footer/footer.php');
