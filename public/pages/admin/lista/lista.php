@@ -1,10 +1,11 @@
 <link rel="stylesheet" href="../../../styles/Lista/lista.css">
 <?php
 include('../../db/conn.php');
+
+//UPDATE
 if (isset($_POST['editar'])) {
     $id = $_POST['id'];
     $user = $_POST['usuario'];
-
     if (isset($_POST['setAdmin'])) {
         if ($user == $_SESSION['usuario']) {
             echo "<script>alert('Você não pode alterar seu proprio usuário!'); location.href='./admin.php';</script>";
@@ -26,10 +27,24 @@ if (isset($_POST['editar'])) {
     }
 }
 
+//READ
 $sql = "SELECT * FROM users";
 $stmt = $pdo->prepare($sql);
 $stmt->execute();
 $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+//DELETE
+include('../../db/conn.php');
+
+if (isset($_POST['delete'])) {
+    $id = $_POST['id'];
+    $sql = "DELETE FROM users WHERE id = ?";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute([$id]);
+    echo "<script>location.href='./admin.php';</script>";
+}
+
+
 
 ?>
 <div class="containerTable">
@@ -55,17 +70,15 @@ $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <table>
             <thead>
                 <tr>
-                    <th>ID</th>
                     <th>Usuário</th>
                     <th>Senha</th>
                     <th>Administrador</th>
-                    <th>Editar</th>
+                    <th colspan="2">Editar</th>
                 </tr>
             </thead>
             <tbody>
                 <?php foreach ($result as $row) { ?>
                     <tr>
-                        <td><?php echo $row['id']; ?></td>
                         <td><?php echo $row['user']; ?></td>
                         <td><?php echo $row['password']; ?></td>
                         <td><?php if ($row['isAdmin'] == 1) {
@@ -75,7 +88,14 @@ $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             }; ?>
 
                         </td>
-                        <td><a href="#" onclick="setEditData(<?php echo $row['id']; ?>, '<?php echo $row['user']; ?>', <?php echo $row['isAdmin']; ?>)">Editar</a></td>
+                        <td><a href="#" onclick="setEditData(<?php echo $row['id']; ?>, '<?php echo $row['user']; ?>', <?php echo $row['isAdmin']; ?>)"><i class="fa fa-user-pen"></i></a></td>
+                        <td>
+                            <form action="" method="post" onsubmit="return confirm('Tem certeza que deseja excluir este usuário?');">
+                                <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+                                <input type="hidden" name="delete" value="delete">
+                                <button type="submit"><i class="fa fa-trash"></i></button>
+                            </form>
+                        </td>
                     </tr>
                 <?php } ?>
             </tbody>

@@ -27,7 +27,7 @@ date_default_timezone_set('America/Sao_Paulo');
             <div class="btnConfig">
                 <?php
                 if (@$_SESSION['usuario']) {
-                    print "<a href='../session/closeSession.php' class='entrarBtn'>" . $_SESSION['usuario'] . "</a>";
+                    print "<a href='../session/closeSession.php' class='entrarBtn' onmouseover='this.innerHTML=\"Sair\"' onmouseout='this.innerHTML=\"" . $_SESSION['usuario'] . "\"'>" . $_SESSION['usuario'] . "</a>";
                 }
 
                 if (@$_SESSION['admin'] == 1) {

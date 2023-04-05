@@ -64,4 +64,24 @@ table {
 table td,
 table th {
   border: 1px solid black;
+}
+
+button[type=submit] {
+  background-color: white;
+}
+
+.fa {
+  padding: 5px;
+}
+
+.fa-trash {
+  color: red;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.fa-user-pen {
+  color: rgb(0, 132, 255);
+  font-size: 24px;
+  cursor: pointer;
 }/*# sourceMappingURL=lista.css.map */
