@@ -1,0 +1,148 @@
+* {
+    color: black;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-image: url("../../assets/img/fundoInicio.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.containerForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5vh auto;
+}
+
+img {
+    opacity: 1;
+    width: 28.4vw;
+    height: 30vh;
+    border: 1px solid black;
+    border-radius: 10px 10px 0px 0px;
+    overflow: hidden;
+    box-shadow: 1px 10px 120px rgba(0, 0, 0, 0.445);
+    z-index: -1;
+}
+
+form {
+    z-index: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 0px 0px 10px 10px;
+    padding: 100px 180px;
+    gap: 5px;
+    background-color: white;
+    box-shadow: 1px 10px 120px rgba(0, 0, 0, 0.445);
+}
+
+form h1 {
+    top: 2%;
+    position: absolute;
+    font-weight: 100;
+}
+
+form h1 {
+    color: #04a1e6;
+}
+
+span {
+    position: relative;
+    bottom: 32px;
+    right: 60px;
+    transition: 0.4s;
+    opacity: 0.7;
+}
+
+.containerForm form input:focus + span {
+    transform: translateY(-30px);
+    opacity: 1;
+}
+
+.containerForm form input:valid + span {
+    transform: translateY(-30px);
+    opacity: 1;
+}
+
+.submitDiv {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    bottom: 30px;
+}
+
+input {
+    width: 100%;
+    border: 1px solid black;
+    padding: 10px 4px;
+    border-radius: 5px;
+}
+
+input[name="login"] {
+    width: 60%;
+    border-radius: 3px;
+    top: 40px;
+    position: relative;
+    padding: 10px;
+    font-weight: 600;
+    background-color: #1080ac;
+    color: white;
+    border: none;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+input[name="login"]:hover {
+    background-color: #04a1e6;
+}
+
+input[name="cadastra"] {
+    width: 60%;
+    border-radius: 3px;
+    top: 40px;
+    position: relative;
+    padding: 10px;
+    font-weight: 600;
+    background-color: #1080ac;
+    color: white;
+    border: none;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+input[name="cadastra"]:hover {
+    background-color: #04a1e6;
+}
+
+a {
+    position: relative;
+    top: 40px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 100;
+    border: 1px solid black;
+    padding: 5px;
+    border-radius: 4px;
+    opacity: 0.5;
+    transition: 0.5s;
+    cursor: pointer;
+    width: 60%;
+    font-size: 12px;
+}
+a:hover {
+    opacity: 1;
+}
+
+.cadastra {
+}
