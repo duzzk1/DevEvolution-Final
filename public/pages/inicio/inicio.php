@@ -16,7 +16,7 @@ require_once('../header/header.php');
 <!-- Seção de Sobre -->
 <section id="sobre">
     <div>
-        <p>Projeto final do Curso apresentado pela IXC-Soft, onde o assunto tratado foi PHP, desde logica de programação até POO na linguagem. </p>
+        <p>Projeto final do Curso apresentado pela IXCSoft, onde o assunto tratado foi PHP, desde logica de programação até POO na linguagem. </p>
     </div>
 </section>
 <!-- Seção de contato -->
@@ -75,7 +75,3 @@ require_once('../header/header.php');
         document.documentElement.scrollTop = 0;
     }
 </script>
-<?php
-// Importa o arquivo footer.php
-require_once('../footer/footer.php');
-?>

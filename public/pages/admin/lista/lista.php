@@ -14,21 +14,27 @@ if (@$_SESSION['admin'] == 1) {
         $user = $_POST['usuario'];
         if (isset($_POST['setAdmin'])) {
             if ($user == $_SESSION['usuario']) {
-                echo "<script>alert('Você não pode alterar seu próprio usuário!'); location.href='./admin.php';</script>";
+                $alertaEditError = "Você não pode alterar seu próprio usuário!";
+            } elseif ($user == null) {
+                $alertaEditError = "Você deve selecionar um usuário!";
             } else {
                 $isAdmin = 1;
                 $sql = "UPDATE users SET isAdmin = $isAdmin WHERE id = $id";
                 $stmt = $pdo->prepare($sql);
                 $stmt->execute();
+                $alertaEditSucess = "$user agora é um administrador!";
             }
         } else {
             if ($user == $_SESSION['usuario']) {
-                echo "<script>alert('Você não pode alterar seu próprio usuário!'); location.href='./admin.php';</script>";
+                $alertaEditError = "Você não pode alterar seu próprio usuário!";
+            } elseif ($user == null) {
+                $alertaEditError = "Você deve selecionar um usuário!";
             } else {
                 $isAdmin = 0;
                 $sql = "UPDATE users SET isAdmin = $isAdmin WHERE id = $id";
                 $stmt = $pdo->prepare($sql);
                 $stmt->execute();
+                $alertaEditSucess = "$user deixou de ser um administrador!";
             }
         }
     }
@@ -46,12 +52,13 @@ if (@$_SESSION['admin'] == 1) {
         $id = $_POST['id'];
         $user = $_POST['usuario'];
         if ($user == $_SESSION['usuario']) {
-            echo "<script>alert('Você não pode excluir seu próprio usuário!'); location.href='./admin.php';</script>";
+            $alertaDeleteError = "Você não pode deletar seu próprio usuário!";
         } else {
             $sql = "DELETE FROM users WHERE id = ?";
             $stmt = $pdo->prepare($sql);
             $stmt->execute([$id]);
-            echo "<script>location.href='./admin.php';</script>";
+            echo "<script>setTimeout(location.href = 'admin.php', 2000);</script>";
+            $alertaDeleteSucess = "$user deletado com sucesso!";
         }
     }
 ?>
@@ -60,13 +67,27 @@ if (@$_SESSION['admin'] == 1) {
     <div class="containerTable">
         <div>
             <div class="edit">
+                <?php // MENSAGENS DE ERRO OU SUCESSO DE OPERAÇÕES
+                if (isset($alertaEditError)) {
+                ?>
+                    <p style="color: red;"><?php echo $alertaEditError ?></p>
+                <?php } elseif (isset($alertaDeleteError)) {
+                ?>
+                    <p style="color: red;"><?php echo $alertaDeleteError ?></p>
+                <?php } elseif (isset($alertaEditSucess)) {
+                ?>
+                    <p style="color: green;"><?php echo $alertaEditSucess ?></p>
+                <?php } elseif (isset($alertaDeleteSucess)) {
+                ?>
+                    <p style="color: green;"><?php echo $alertaDeleteSucess ?></p>
+                <?php } ?>
                 <form action="" method="post">
                     <div class="inputEdit">
                         <label for="usuario">Usuário</label>
                         <input type="text" name="usuario" id="usuario" required readonly>
                         <label for="setAdmin">Admin</label>
                         <input type="checkbox" name="setAdmin" id="setAdmin" value="1">
-                        <input type="hidden" name="id" id="id">
+                        <input type="hidden" name="id" id="id" required>
                         <input type="hidden" name="editar">
                     </div>
                     <div class="submitEdit">
