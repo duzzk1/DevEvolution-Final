@@ -1,8 +1,6 @@
 <!-- Inclui o arquivo de estilo para a lista -->
 <link rel="stylesheet" href="../../../styles/Lista/lista.css">
 <?php
-// Inicia a sessão
-session_start();
 
 // Verifica se o usuário é administrador
 if (@$_SESSION['admin'] == 1) {
@@ -93,7 +91,7 @@ if (@$_SESSION['admin'] == 1) {
                     <?php foreach ($result as $row) { ?>
                         <tr>
                             <td><?php echo $row['user']; ?></td>
-                            <td><?php echo $row['password']; ?></td>
+                            <td><?php echo md5($row['password']); ?></td>
                             <!-- Verifica se o usuário é administrador, exibindo o ícone de "check" ou "x" -->
                             <td><?php if ($row['isAdmin'] == 1) {
                                     echo '<i class="fa fa-check"></i>';
@@ -128,6 +126,6 @@ if (@$_SESSION['admin'] == 1) {
             <?php
             // Verifica se o usuário é administrador, caso contrário redireciona para a página inicial
         } else {
-            echo "<script>location.href='../index.php';</script>";
+            echo "<script>location.href='../../index.php';</script>";
         }
             ?>

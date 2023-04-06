@@ -19,12 +19,12 @@ date_default_timezone_set('America/Sao_Paulo');
     <header>
         <nav>
             <!-- Logo do Projeto -->
-            <a class="logoDu" href="../index/index.php"><img src="../../assets/img/logo.svg" alt="Logo do Projeto"></a>
+            <a class="logoDu" href="../main/main.php"><img src="../../assets/img/logo.svg" alt="Logo do Projeto"></a>
             <!-- Menu de Navegação -->
             <ul>
-                <li class="listitem"><a href="../index/index.php">Inicio</a></li>
-                <li class="listitem"><a href="../index/index.php#sobre">Sobre</a></li>
-                <li class="listitem"><a href="../index/index.php#contato">Contato</a></li>
+                <li class="listitem"><a href="../main/main.php">Inicio</a></li>
+                <li class="listitem"><a href="../main/main.php#sobre">Sobre</a></li>
+                <li class="listitem"><a href="../main/main.php#contato">Contato</a></li>
             </ul>
 
             <!-- Botão de Configurações -->

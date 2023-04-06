@@ -11,6 +11,6 @@
         <div class="submitDiv">
             <input type="submit" value="Cadastrar" name="cadastra"> <!-- Botão de envio do formulário de registro -->
         </div>
-        <a href="../index/index.php">Voltar</a> <!-- Link para a página inicial -->
+        <a href="../../index.php">Voltar</a> <!-- Link para a página inicial -->
     </form>
 </div>

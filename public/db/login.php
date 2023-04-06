@@ -15,8 +15,8 @@ if (isset($_POST['login'])) { // Verifica se o formulário de login foi submetid
     if ($stmt->rowCount() > 0) { // Verifica se a consulta SQL retornou algum resultado
         $_SESSION['usuario'] = $result['user']; // Armazena o nome de usuário na sessão
         $_SESSION['admin'] = $result['isAdmin']; // Armazena o nível de permissão do usuário na sessão
-        echo "<script>location.href='../pages/index/index.php';</script>"; // Redireciona para a página principal
+        echo "<script>location.href='../pages/main/main.php';</script>"; // Redireciona para a página principal
     } else {
-        echo "<script>alert('Usuário não encontrado!'); location.href='../pages/index/index.php';</script>"; // Exibe uma mensagem de erro e redireciona para a página principal
+        echo "<script>alert('Usuário não encontrado!'); location.href='../pages/main/main.php';</script>"; // Exibe uma mensagem de erro e redireciona para a página principal
     }
 }
