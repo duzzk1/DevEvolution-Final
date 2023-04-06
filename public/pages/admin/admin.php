@@ -1,8 +1,8 @@
 <?php
 session_start();
-if (@$_SESSION['admin'] == 1) { //Se o usuário não for admin envia ele para a pagina inicial 
-    include('../header/header.php');
-    include('./lista/lista.php');
-} else { //Se o usuário for admin, abre a lista de usuários na pagina.
+if (@$_SESSION['admin'] == 1) { // verifica se o usuário é um admin
+    include('../header/header.php'); // inclui o cabeçalho
+    include('./lista/lista.php'); // inclui a lista de usuários
+} else { // se o usuário não é um admin, redireciona para a página inicial
     echo "<script>location.href='../index.php';</script>";
 }
