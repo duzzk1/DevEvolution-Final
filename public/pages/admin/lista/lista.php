@@ -50,17 +50,17 @@ if (isset($_POST['delete'])) {
 <div class="containerTable">
     <div>
         <div class="edit">
-            <h3>Editar</h3>
             <form action="" method="post">
                 <div class="inputEdit">
                     <label for="usuario">Usuário</label>
-                    <input type="text" name="usuario" id="usuario" required>
+                    <input type="text" name="usuario" id="usuario" required readonly>
                     <label for="setAdmin">Admin</label>
                     <input type="checkbox" name="setAdmin" id="setAdmin" value="1">
                     <input type="hidden" name="id" id="id">
+                    <input type="hidden" name="editar">
                 </div>
                 <div class="submitEdit">
-                    <input type="submit" value="Editar" name="editar">
+                    <button type="submit">Enviar</button>
                 </div>
             </form>
         </div>

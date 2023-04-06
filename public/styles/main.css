@@ -129,6 +129,23 @@ li a {
   border-radius: 10px;
   width: 40%;
   text-align: center;
+  background-color: white;
+  color: black;
+}
+
+button[type=submit] {
+  border: none;
+  border-radius: 5px;
+  background-color: #0077ff;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+button[type=submit]:hover {
+  background-color: #005ae6;
 }
 
 .inputEdit {
