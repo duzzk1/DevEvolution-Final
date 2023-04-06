@@ -7,7 +7,7 @@ if (isset($_POST['login'])) { // Verifica se o formulário de login foi submetid
     $user = $_POST['usuario']; // Obtém o nome de usuário informado no formulário
     $password = $_POST['password']; // Obtém a senha informada no formulário
 
-    $sql = "SELECT * FROM users WHERE user = ? AND password = ?"; // Prepara a consulta SQL para buscar o usuário no banco de dados
+    $sql = "SELECT * FROM users WHERE user = ? AND password = ?"; // Prepara a query SQL para buscar o usuário no banco de dados
 
     $stmt = $pdo->prepare($sql); // Prepara a consulta SQL
     $stmt->execute([$user, $password]); // Executa a consulta SQL, passando os parâmetros necessários
