@@ -1,4 +1,8 @@
-# Ambiente de desenvolvimento com Docker + PHP FPM 8.1.x + Composer + Nginx + MariaDB
+Projeto criado por mim na participação do Curso DevEvolution promovido pela empresa onde atualmente atuo. 
+*IXCSoft*
+
+Esse projeto é muito importante pra mim, por isso irei deixar ele amostra aqui. Lembrando isso é um projeto de um completo iniciante, com cerca de 3 mêses de estudo.
+Então apesar de ter sido algo rápido e que nem se compara ao que tenho de conhecimento hoje, isso era algo surreal pra mim, assim como deve ser pra muitos que estão iniciando nos estudos!
 
 ## Requisitos
 
